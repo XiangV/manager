@@ -2,6 +2,7 @@
 title: CPP备忘
 date: 2018-05-05 15:11:09
 tags: CPP
+categories: "c++"
 ---
 
 

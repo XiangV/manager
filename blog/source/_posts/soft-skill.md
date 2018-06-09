@@ -2,6 +2,7 @@
 title: soft_skill
 date: 2018-06-05 22:09:07
 tags: 程序猿 技能
+categories: "思考"
 ---
 
 #  程序员的软技能（一）

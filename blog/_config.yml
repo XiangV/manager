@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: XiangV
-subtitle: 码农，伪文艺
+title: XiangWei
+subtitle: IT工程师
 description: 
 keywords:
 author: xiangwei
@@ -73,7 +73,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: modernist
+# theme: modernist
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
