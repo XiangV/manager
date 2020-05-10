@@ -1,7 +1,8 @@
 ---
-title: CPP备忘
+title: C++防坑（一）
 date: 2018-05-05 15:11:09
 tags: CPP
+categories: 编程语言
 ---
 
 
@@ -38,7 +39,7 @@ mutex.unlock();
 ```c++
 void Add(const Tlement &ele) {
     mutex.lock();
- 	vec.push_back(ele);
+ 	  vec.push_back(ele);
     mutex.unlock();
 }
 ```
@@ -46,28 +47,6 @@ void Add(const Tlement &ele) {
 这就是产生问题的地方。调用外部模块时解开了锁，Add调用push_back，我们知道vector在capcity满了之后重新分配，于是原来的引用就失效了。
 
 这里实际上还有另一个问题，算法复杂度会在erase中间元素时由于移动后续元素成为O(n2)。
-
-一种解决方案是：
-
-``` c++
-std::vector<Element> remain;
-mutex.lock();
-for (size_t i = 0; i < vec.size(); ++i) {
-    Element ele = vec[i];
-    mutex.unlock();
-    bool handled = CheckShouldHandle(ele);  // 调用外部模块去检查
-    mutex.lock();
-    if (handled) {
-        Handle(ele);
-    } else {
-        remain.push_back(ele);
-    }
-}
-vec.swap(remain);
-mutex.unlock();
-```
-
-
 
 ### 越界
 
@@ -80,10 +59,6 @@ mutex.unlock();
 ```c++
 std::vector<Element> items = Retrive();
 int start_index = -1;
-babababa
-bababa
-babab
-baba
 .
 .
 .
@@ -91,8 +66,7 @@ baba
 auto ele = items[start_index];
 ```
 
-策略团队经过各种计算选择来确定start_index。但是实际上计算过程可能会永远没有设置start_index。 于是最后使用start_index的默认值，于是core了。
-
+策略团队经过各种计算选择来确定start_index。但是实际上计算过程某些分支没有给start_index赋值, 最后使用start_index的默认值-1，于是core了。
 
 
 ### shared_ptr错误使用
