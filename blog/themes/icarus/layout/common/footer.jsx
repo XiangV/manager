@@ -26,7 +26,10 @@ class Footer extends Component {
                             <span dangerouslySetInnerHTML={{ __html: `&copy; ${siteYear} ${author || siteTitle}` }}></span>
                             &nbsp;&nbsp;Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>&nbsp;&&nbsp;
                             <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
-                            &nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank" rel="noopener">京ICP备20018395号-1</a>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank" rel="noopener">京ICP备20018395号</a>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;<div style="width:300px;margin:0 auto; padding:20px 0;">
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011302002025" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/img/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11011302002025号</p></a>
+		 	</div>
                             {showVisitorCounter ? <br /> : null}
                             {showVisitorCounter ? <span id="busuanzi_container_site_uv"
                                 dangerouslySetInnerHTML={{ __html: visitorCounterTitle }}></span> : null}
