@@ -2,6 +2,7 @@
 title: 网络丢包的追查
 date: 2020-05-30 15:36:47
 tags: TCP
+categories: linux
 ---
 
 

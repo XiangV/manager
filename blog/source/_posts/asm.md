@@ -1,7 +1,8 @@
 ---
 title: 探究coroutine（一）
 date: 2020-06-08 22:26:33
-tags: linux asm coroutine
+tags: coroutine
+categories: linux
 ---
 
 
